@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Welcome Screen Styling */
+        .welcome-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('welcome-background.jpg') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        .welcome-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .welcome-content span{
+            color: #ff5722;
+        }
+
+        .welcome-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .discover-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .discover-btn:hover {
+            background-color: #e64a19;
+        }
+
+        /* Category Section */
+
+        .category-header {
+            text-align: center;
+            color: #ff5722;
+            font-size: 2rem;
+            padding: 10px;
+           
+        }
+
+        .category-section {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: url('') no-repeat center center/cover;
+            min-height: 100vh;
+        }
+
+        .reel {
+            width: 250px;
+            height: 450px;
+            background-color: black;
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 4px solid #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .reel:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(255, 87, 34, 0.6);
+        }
+
+        .reel video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .reel-title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #777;
+        }
+
+        .footer a {
+            color: #ff5722;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .category-header{
+            display: none;
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <h1>Hi! , I'm <span>Mayank</span><br>
+                Welcome to My Portfolio</h1>
+            <button class="discover-btn" onclick="showCategories()">Discover</button>
+        </div>
+    </div>
+
+    <!-- Category Section -->
+    <div class="category-header" id="cathead" >Discover</div>
+
+    <div class="category-section" id="categorySection">
+        <div class="reel" onclick="openCategoryPage('cinematic.html')">
+            <video src="cinematic1.mp4" autoplay muted loop></video>
+            <div class="reel-title">Cinematic Edits</div>
+        </div>
+        <div class="reel" onclick="openCategoryPage('action.html')">
+            <video src="travel1.mp4" autoplay muted loop></video>
+            <div class="reel-title">Action Edits</div>
+        </div>
+        <div class="reel" onclick="openCategoryPage('event.html')">
+            <video src="event1.mp4" autoplay muted loop></video>
+            <div class="reel-title">Event Edits</div>
+        </div>
+        <div class="reel" onclick="openCategoryPage('engage.html')">
+            <video src="bts1.mp4" autoplay muted loop></video>
+            <div class="reel-title">Motion Graphics & Typography</div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="contact">
+        <p>© 2024 My Portfolio | Built with ❤️ by Mayank T</p>
+        <p><a href="mailto:workwithcinemayank@gmail.com">Contact Me</a> <a href="https://www.instagram.com/_cinemayank">   | DM   </a> </p>
+    </footer>
+
+    <script>
+        function showCategories() {
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('categorySection').style.display = 'flex';
+            document.getElementById('cathead').style.display = 'flex';
+        }
+
+        function openCategoryPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
